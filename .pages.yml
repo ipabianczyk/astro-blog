@@ -1,30 +1,24 @@
 media:
-  input: public
-  output: /
+  input: public/images
+  output: /images
+
 content:
-  - name: posts
-    label: Posts
+  - name: blog_polska
+    label: Blog ogólnopolski
     type: collection
-    path: src/content/blog
-    view:
-      fields: [ title, draft, date ]
+    path: src/content/blog-polska
     fields:
-      - { name: author, label: Author, type: string }
-      - { name: pubDatetime, label: Date, type: date }
-      - { name: modDatetime, label: Date, type: date }
-      - { name: title, label: Title, type: string, required: true }
-      - { name: ogImage, label: Title, type: string }
-      - { name: slug, label: Slug, type: string }
-      - { name: featured, label: Featured, type: boolean }
-      - { name: draft, label: Draft, type: boolean }
-      - { name: tags, label: Tags, type: string, list: true }
-      - { name: description, label: Description, type: string }
-      - { name: body, label: Body, type: rich-text }
-  - name: about
-    label: About page
-    type: file
-    path: src/pages/about.md
+      - { name: title, label: Tytuł, type: string }
+      - { name: description, label: Opis, type: text }
+      - { name: date, label: Data, type: date }
+      - { name: body, label: Treść, type: rich-text }
+
+  - name: blog_sosnowiec
+    label: Blog Sosnowiec
+    type: collection
+    path: src/content/blog-sosnowiec
     fields:
-      - { name: layout, type: string, hidden: true, default: "../layouts/AboutLayout.astro" }
-      - { name: title, label: Title, type: string }
-      - { name: body, label: Body, type: rich-text, options: { input: public/assets, output: /assets } }
+      - { name: title, label: Tytuł, type: string }
+      - { name: description, label: Opis, type: text }
+      - { name: date, label: Data, type: date }
+      - { name: body, label: Treść, type: rich-text }
